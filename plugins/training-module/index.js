@@ -9,21 +9,24 @@ const TrainingModule = () => {
   
   useEffect(() => {
     const fetchData = async () => {
-      const path = './README.md'
+      const path = 'https://api.github.com/repos/hennepin-tech/htc-content-lake/contents/plugins/training-module/training-module.md'
       const res = await fetch(path)
-      await console.log(res)
-      const markdown = marked(res.text())
+      const { content } = await res.json()
+      const parsed = await atob(content)
+      console.log(parsed)
+      const markdown = marked(parsed)
       setMd(markdown)
     }
     fetchData();
   }, [])  
 
     return (
-      <div className={styles.container}>
-        {/* <header className={styles.header}>
-          <h2 className={styles.title}>Welcome to Sanity!</h2>
-        </header> */}
-        { md }
+      <div 
+        className={styles.container} 
+        dangerouslySetInnerHTML={{
+          __html: md
+        }}
+      >
       </div>
     )
   }
