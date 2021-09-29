@@ -1,0 +1,67 @@
+{
+    "root": true,
+    "api": {
+      "projectId": "jvipao9a",
+      "dataset": "marcomm"
+    },
+    "project": {
+      "name": "htc-content-lake"
+    },
+    "__experimental_spaces": [
+      {
+        "name": "marcomm",
+        "title": "Marketing & Communications",
+        "default": true,
+        "api": {
+          "projectId": "jvipao9a",
+          "dataset": "marcomm"
+        }
+      },
+      {
+        "name": "studentAffairs",
+        "title": "Student Affairs",
+        "default": true,
+        "api": {
+          "projectId": "jvipao9a",
+          "dataset": "student-affairs"
+        }
+      }
+    ],
+    "plugins": [
+      "@sanity/base",
+      "@sanity/default-layout",
+      "@sanity/default-login",
+      "@sanity/desk-tool",
+      "@sanity/dashboard"
+    ],
+    "env": {
+      "development": {
+        "plugins": [
+          "@sanity/vision"
+        ]
+      }
+    },
+    "parts": [
+      {
+        "name": "part:@sanity/base/schema",
+        "path": "./schemas/schema"
+      },
+      {
+        "name": "part:@sanity/desk-tool/structure",
+        "path": "./structure/main.js"
+      },
+      { 
+        "implements": "part:@sanity/dashboard/config", 
+        "path": "./plugins/dashboardConfig.js" 
+      },
+      {
+        "implements": "part:@sanity/base/brand-logo",
+        "path": "./components/brand/logo.js"
+      },
+      {
+        "implements": "part:@sanity/base/theme/variables/override-style",
+        "path": "./styles/variables.css"
+      }
+    ]
+  }
+  
