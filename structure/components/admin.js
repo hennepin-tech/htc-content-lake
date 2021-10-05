@@ -1,13 +1,13 @@
-// This module defines the structure of the Student Affairs dataset as it appears in the Sanity Studio
+// This module defines the structure of the Admin dataset as it appears in the Sanity Studio
 
 import S from '@sanity/desk-tool/structure-builder'
 
 export default () => {
     return S.list()
-    .title('Student Affairs Content')
+    .title('Admin Content')
     .items([
       S.listItem()
-        .title('Current title')
+        .title('No Content')
         // .child(
         //   S.documentTypeList('myType')
         //     .title('Current title')

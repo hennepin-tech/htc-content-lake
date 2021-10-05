@@ -26,6 +26,7 @@ export default () => {
                         S.editor()
                             .schemaType('blogHomepage')
                             .documentId('blogHomepage')
+                            .title('Blog Homepage')
                     )
                     .icon(FiHome),
                 S.divider(),

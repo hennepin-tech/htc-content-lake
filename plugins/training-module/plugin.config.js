@@ -1,0 +1,1 @@
+export const YOUTUBE_PLAYLIST_ITEMS_API = ({playlistId, secrets}) => `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=${playlistId}&key=${secrets.apiKey}`

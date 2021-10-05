@@ -1,17 +1,32 @@
-import S from '@sanity/desk-tool/structure-builder'
 import client from 'part:@sanity/base/client'
 
 import  marcomm from './components/marcomm'
-import  studentAffairs from './components/student-affairs'
+import  admin from './components/admin'
+import denied from './components/denied'
 
 const { dataset } = client.clientConfig
 
-export default () => {
-  if (dataset == 'marcomm') {
+const groupQuery = '* [_type == "system.group" && $identity in members] {_id}'
+
+export default () => client.fetch(groupQuery)
+  .then(docs => docs.map(doc => doc._id.split('.').pop()))
+  .then(groupNames => {
+    console.log(groupNames)
+    const deskItems = []
+
+    if (dataset == 'marcomm') {
+      return marcomm();
+    }
+    
+    if (dataset == 'admin') {
+      if (groupNames.includes('administrator'))
+        return admin();
+      } else { return denied(); }
+    }
+  )
+  .catch(() => {
     return marcomm();
-  }
+  })
+
+
   
-  if (dataset == 'student-affairs') {
-    return studentAffairs();
-  }
-}

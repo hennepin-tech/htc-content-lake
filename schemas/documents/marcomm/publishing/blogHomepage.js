@@ -1,13 +1,13 @@
 export default {
     name: 'blogHomepage',
     title: 'Blog homepage',
+    description: '',
     type: 'document',
     fields: [
         {
-            name: 'heroTitle',
-            title: 'Hero Title',
-            type: 'string',
-            description: 'The main heading in the hero section',
+            name: 'hero',
+            title: 'Hero Section',
+            type: 'heroSection',
         },
         {
             name: 'featuredPosts',

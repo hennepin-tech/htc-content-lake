@@ -7,13 +7,35 @@
   "project": {
     "name": "HTC - Content Platform"
   },
+  "__experimental_spaces": [
+    {
+      "name": "marcomm",
+      "title": "Marketing & Communications",
+      "default": true,
+      "api": {
+        "projectId": "jvipao9a",
+        "dataset": "marcomm"
+      }
+    },
+    {
+      "name": "admin",
+      "title": "Admin",
+      "default": true,
+      "api": {
+        "projectId": "jvipao9a",
+        "dataset": "admin"
+      }
+    }
+  ],
   "plugins": [
     "@sanity/base",
     "@sanity/default-layout",
     "@sanity/default-login",
-    "@sanity/desk-tool",
     "@sanity/dashboard",
-    "training-module"
+    "@sanity/desk-tool",
+    "training-module",
+    "media-library",
+    "order-documents"
   ],
   "env": {
     "development": {
@@ -31,9 +53,13 @@
       "name": "part:@sanity/desk-tool/structure",
       "path": "./structure/main.js"
     },
+    { 
+      "implements": "part:@sanity/dashboard/config", 
+      "path": "./plugins/dashboardConfig.js" 
+    },
     {
-      "implements": "part:@sanity/dashboard/config",
-      "path": "./plugins/dashboardConfig.js"
+      "implements": "part:@sanity/form-builder/input/image/asset-sources",
+      "path": "./structure/assetSources.js"
     },
     {
       "implements": "part:@sanity/base/brand-logo",

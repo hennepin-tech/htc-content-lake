@@ -8,4 +8,4 @@ If you're reading this, the screen you're currently on is the Dashboard. This da
 
 ## Studio Desk
 
-In the main navigation you'll see a button for the 'Desk' – this is where all content editing takes place. Content is organized based on category and consists of one-of-many data types (like blog posts, events, academic programs, etc), and one-of-one types (like landing pages, global site settings, etc).
+In the main navigation you'll see a button for the 'Desk' - this is where all content editing takes place. Content is organized based on category and consists of one-of-many data types (like blog posts, events, academic programs, etc), and one-of-one types (like landing pages, global site settings, etc).
