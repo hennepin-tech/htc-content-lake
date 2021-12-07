@@ -5,16 +5,11 @@ export default {
     type: 'document',
     fields: [
         {
-            name: 'hero',
-            title: 'Hero Section',
-            type: 'heroSection',
-        },
-        {
-            name: 'featuredPosts',
-            title: 'Featured Posts',
+            name: 'featuredPost',
+            title: 'Featured Post',
             type: 'reference',
             to: [{type: 'post'}],
-            validation: Rule => Rule.required().min(3).max(3)
+            validation: Rule => Rule.required()
         },
     ],
 }

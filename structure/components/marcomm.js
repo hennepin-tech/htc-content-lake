@@ -13,6 +13,16 @@ export default () => {
     return S.list()
       .title('Marketing Content')
       .items([
+        // S.listItem()
+        //     .title('Home Page')
+        //     .child(
+        //         S.editor()
+        //             .schemaType('homepage')
+        //             .documentId('homepage')
+        //             .title('Home Page')
+        //     )
+        //     .icon(FiHome),
+        // S.divider(),
         S.listItem()
           .title('Blog')
           .child(

@@ -7,12 +7,16 @@ export default () => {
     .title('Admin Content')
     .items([
       S.listItem()
-        .title('No Content')
-        // .child(
-        //   S.documentTypeList('myType')
-        //     .title('Current title')
-        //     .filter('_type == $type')
-        //     .params({type: 'myType'})
-        // ),
+        .title('Survey Tools')
+        .child(
+          S.documentTypeList('survey')
+          .title('Surveys')
+          .child((documentId) =>
+            S.document()
+              .id('survey')
+              .schemaType('survey')
+              .documentId(documentId)
+          )
+      ),
     ])
 }

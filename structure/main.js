@@ -11,7 +11,7 @@ const groupQuery = '* [_type == "system.group" && $identity in members] {_id}'
 export default () => client.fetch(groupQuery)
   .then(docs => docs.map(doc => doc._id.split('.').pop()))
   .then(groupNames => {
-    console.log(groupNames)
+    // console.log(groupNames)
     const deskItems = []
 
     if (dataset == 'marcomm') {
@@ -27,6 +27,3 @@ export default () => client.fetch(groupQuery)
   .catch(() => {
     return marcomm();
   })
-
-
-  
