@@ -74,7 +74,6 @@ export default () => {
                     .child(
                         S.documentTypeList('author')
                         .title('Authors')
-                        
                         .child((documentId) =>
                             S.document()
                             .id('author')
@@ -84,6 +83,18 @@ export default () => {
                         
                     )
                     .icon(FiUsers),
+                S.listItem()
+                    .title('Featured Programs')
+                    .child(
+                        S.documentTypeList('featuredProgram')
+                            .title('Featured Programs')
+                            .child((documentId) =>
+                            S.document()
+                                .id('featuredProgram')
+                                .schemaType('featuredProgram')
+                                .documentId(documentId)
+                            )
+                    )
             ])
           )
           .icon(FiBookOpen),

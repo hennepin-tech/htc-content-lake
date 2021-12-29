@@ -30,6 +30,7 @@ import blogHomepage from './documents/marcomm/publishing/blogHomepage'
 import postCategory from './documents/marcomm/publishing/postCategory'
 import post from './documents/marcomm/publishing/post'
 import author from './documents/marcomm/publishing/author'
+import featuredProgram from './documents/marcomm/publishing/featuredProgram'
 import homepage from './documents/marcomm/homepage/homepage'
 
 
@@ -67,5 +68,6 @@ export default createSchema({
     academicProgram,
     programCategory,
     postCategory,
+    featuredProgram,
   ]),
 })

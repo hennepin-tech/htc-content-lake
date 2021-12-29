@@ -29,6 +29,13 @@ export default {
       type: 'mainImage',
     },
     {
+      name: 'relatedProgram',
+      title: 'Related Program',
+      description: 'If the post mentions a specific program, reference that program here.',
+      type: 'reference',
+      to: {type: 'featuredProgram'}
+    },
+    {
       name: 'categories',
       title: 'Categories',
       type: 'array',
